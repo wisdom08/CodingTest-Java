@@ -1,3 +1,5 @@
+package ch01;
+
 public class MoveZeros {
     public static void main(String[] args) {
         //1

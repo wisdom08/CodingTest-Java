@@ -1,3 +1,5 @@
+package ch01;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -21,16 +23,16 @@ public class MeetingRooms {
     public static void main(String[] args) {
 
         MeetingRooms r = new MeetingRooms();
-        Interval2 in1 = new Interval2(15, 20);
-        Interval2 in2 = new Interval2(5, 10);
-        Interval2 in3 = new Interval2(0, 30);
+        Interval in1 = new Interval(15, 20);
+        Interval in2 = new Interval(5, 10);
+        Interval in3 = new Interval(0, 30);
 
-        Interval2[] intervals = {in1, in2, in3};
+        Interval[] intervals = {in1, in2, in3};
         System.out.println(r.solve(intervals));
 
     }
 
-    private boolean solve(Interval2[] intervals) {
+    private boolean solve(Interval[] intervals) {
         //1.null check
         if (intervals == null) {
             return false;
@@ -52,20 +54,18 @@ public class MeetingRooms {
         return true;
     }
 
-    Comparator<Interval2> Comp = new Comparator<Interval2>() {
+    Comparator<Interval> Comp = new Comparator<Interval>() {
         @Override
-        public int compare(Interval2 o1, Interval2 o2) {
+        public int compare(Interval o1, Interval o2) {
             return o1.start - o2.start;
         }
     };
 
-    private static void print(Interval2[] intervals) {
+    private static void print(Interval[] intervals) {
         for (int i = 0; i < intervals.length; i++) {
-            Interval2 in = intervals[i];
+            Interval in = intervals[i];
             System.out.println(in.start+" "+in.end);
         }
     }
 }
-
-
 
