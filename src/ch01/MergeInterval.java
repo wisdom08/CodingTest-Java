@@ -44,23 +44,21 @@ public class MergeInterval {
     public List<Interval2> merge(List<Interval2> intervals) {
         if(intervals.isEmpty()) return intervals;
 
-        // 1.
         List<Interval2> result = new ArrayList<>();
+        Collections.sort(intervals, (a, b) -> (a.start - b.start));
 
-        Collections.sort(intervals, (a, b) -> a.start - b.start);
-        // Collections.sort(intervals, comp);
-        print(intervals);
+        Interval2 before = intervals.get(0);
 
-        // 2.
-        Interval2 before = intervals.get(0); //[1,3]
         for (int i = 1; i < intervals.size(); i++) {
             Interval2 current = intervals.get(i);
+
             if (before.end >= current.start) {
                 before.end = Math.max(before.end, current.end);
             } else {
                 result.add(before);
                 before = current;
             }
+
         }
 
         if (!result.contains(before)) {
