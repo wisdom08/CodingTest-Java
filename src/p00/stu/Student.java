@@ -27,4 +27,12 @@ public class Student {
     public void setNo(int no) {
         this.no = no;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", no=" + no +
+                '}';
+    }
 }

@@ -14,37 +14,35 @@ public class Main {
         list.add(stu2);
         list.add(stu3);
 
-        boolean con = true;
-        while (con) {
-            System.out.println("계속 검색? y // 종료? n");
-            Scanner sc = new Scanner(System.in);
-            String s = sc.nextLine();
+        Scanner sc = new Scanner(System.in);
 
-            if (s.equals("y")) {
-                System.out.println("계속 검색");
-                con = true;
+        while (true) {
+            System.out.println("계속 검색 y // 종료 n");
+            String input = sc.nextLine();
 
-                System.out.println("이름 입력해주세요.");
+            if (input.equals("y")) {
+                System.out.println("검색 시작! 이름 입력해주세요.");
                 String name = sc.nextLine();
 
-                int cnt = 0;
-                for (Student student : list) {
-                    if (name.equals(student.getName())) {
-                        System.out.println(name + "의 학번은 "+ student.getNo());
-                        cnt++;
+                boolean flag = false;
+
+                for (Student stu : list) {
+                    if (stu.getName().equals(name)) {
+                        System.out.println("학번은 " + stu.getNo());
+                        flag = true;
                     }
                 }
 
-                if (cnt == 0) {
-                    System.out.println("없는 학생입니다.");
+                if (!flag) {
+                    System.out.println("해당 학생이 없습니다.");
                 }
 
 
-            } else {
-                System.out.println("종료");
-                con = false;
+            } else if (input.equals("n")) {
+                break; //가까운 while문 탈출
             }
 
         }
+        System.out.println("종료");
     }
 }
