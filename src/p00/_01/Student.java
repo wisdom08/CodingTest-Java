@@ -1,4 +1,4 @@
-package p00.stu;
+package p00._01;
 
 public class Student {
     private String name;

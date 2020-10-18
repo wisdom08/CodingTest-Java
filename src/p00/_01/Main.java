@@ -1,4 +1,4 @@
-package p00.stu;
+package p00._01;
 
 import java.util.ArrayList;
 import java.util.Scanner;
