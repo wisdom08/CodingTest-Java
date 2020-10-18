@@ -1,4 +1,4 @@
-package ch02;
+package p02;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;

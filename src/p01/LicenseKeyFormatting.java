@@ -1,4 +1,4 @@
-package ch01;
+package p01;
 
 public class LicenseKeyFormatting {
     public static void main(String[] args) {
