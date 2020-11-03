@@ -1,4 +1,4 @@
-package p00._p16;
+package p00._16;
 
 //별 출력1
 public class Main {
