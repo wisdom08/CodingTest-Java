@@ -6,7 +6,7 @@ public class Main {
         int num = 9;
         boolean flag = true;
         for (int i = 1; i <= num; i++) {
-            // 1+2-3+4-5 ...
+            // 1+2-3+4
 
             if (i == num) {
                 System.out.print(i);
